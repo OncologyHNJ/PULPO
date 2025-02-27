@@ -1,4 +1,3 @@
-#######CREATED BY:MARTA PORTASANY#################
 # ==================================================
 # Script: 10_Sigprofilermatrixgeneratorcnvs
 # Description: Execution of SigProfilerMatrixgenerator for single samples of CNV files
