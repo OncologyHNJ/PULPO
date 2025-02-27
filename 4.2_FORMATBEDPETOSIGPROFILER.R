@@ -1,43 +1,43 @@
-#######CREATED BY:MARTA PORTASANY########
-#########################################
+# ==================================================
+# Script: 4.2_FORMATBEDPETOSIGPROFILER
+# Description: Formatting bedpe file to Sigprofiler input
+# Author: Marta Portasany
+# Created on: 2025-02-27
+# Last modified: 2025-02-27
+# Pipeline: PULPO
+# Dependencies: reticulate, devtools, dplyr, magrittr
+# ==================================================
+
+# Load required libraries
+library(reticulate)
+library(devtools)
+library(dplyr)
+library(magrittr)
+
+# Get command line arguments
 args <- commandArgs(trailingOnly = TRUE)
 bedpedirectory <- args[1]
 patientid <- args[2]
 inputdata <- args[3]
 outputdirectoryfile <- args[4]
-#########################################
-#bedpedirectory <-"/home/user/MARTA/PULPO_RevisadoBionano/results/Patients/Patient-109/OGMdata/Patient-109.bedpe"
-#patientid <- "Patient-109"
-#inputdata <- "/home/user/MARTA/PULPO_RevisadoBionano/results/Patients/Patient-109/SigProfiler/data/"
-#outputdirectory <- "/home/user/MARTA/PULPO_RevisadoBionano/results/Patients/Patient-109/SigProfiler/results/"
-#outputdirectoryfile <- "/home/user/MARTA/PULPO_RevisadoBionano/results/Patients/Patient-109/SigProfiler/data/SigProfilerSVdf.bedpe"
-#########################################
-library(reticulate)
-library(devtools)
-library(dplyr)
-library(magrittr)
-#########################################
 
 # Read the .bedpe file into a dataframe
-#df <- read.table(bedpedirectory, header = FALSE)
-
-
 df <- tryCatch(
   {
     read.table(bedpedirectory, header = FALSE)
   },
   error = function(e) {
     message("The file is empty or cannot be read. Creating an empty output file.")
-    df_total <- data.frame()  # Crear un data frame vacío
+    df_total <- data.frame()  # Create an empty data frame
     write.table(df_total, file = outputdirectoryfile, sep = "\t", row.names = FALSE, quote = FALSE)
-    return(NULL)  # Devolver NULL para evitar más procesamiento
+    return(NULL)  # Return NULL to avoid further processing
   }
 )
 
-# Si df es NULL, termina el script aquí
+# If df is NULL, terminate the script here
 if (is.null(df) || nrow(df) == 0) {
   message("Skipping processing due to empty file.")
-  quit(save = "no")  # Finaliza la ejecución del script
+  quit(save = "no")  # End script execution
 }
 
 
@@ -63,7 +63,6 @@ df_total <- df_total %>%
     svclass == "inversion_paired" ~ "inversion",
     svclass == "inversion_partial" ~ "inversion",
     
-
     TRUE ~ svclass  # Hold values that do not match any conditions
   ))
 
