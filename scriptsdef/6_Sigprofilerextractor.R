@@ -1,6 +1,12 @@
-#######CREATED BY:MARTA PORTASANY########
-#############SIGPROFILEREXTRACTOR#################
-#########################################
+# ==================================================
+# Script: 5_Sigprofilermatrixgenerator.R
+# Description: Execution of SigProfilermatrixgenerator 
+# Author: Marta Portasany
+# Created on: 2025-02-27
+# Last modified: 2025-02-27
+# Pipeline: PULPO
+# Dependencies: reticulate, devtools, SigProfilerExtractorR
+# ==================================================
 args <- commandArgs(trailingOnly = TRUE)
 inputdata <- args[1]
 pythondirectory <- args[2]
@@ -19,49 +25,38 @@ if (!requireNamespace("SigProfilerExtractorR") == TRUE){
   library("SigProfilerExtractorR")
   SigProfilerExtractorR::install("GRCh38", rsync=FALSE, bash=TRUE)
   
-}else {
-  message("SigProfilerExtractorR ya está instalado.")
+} else {
+  message("SigProfilerExtractorR is now installed.")
   library("SigProfilerExtractorR")
 }
 
-###########SIGPROFILER##############
-#library("SigProfilerMatrixGeneratorR")
-#library("SigProfilerExtractorR")
-#library("reticulate")
-#library("devtools")
-#########################################
-#pythondirectory <- "/home/marta/mambaforge/envs/mutationalsignaturesOGM/bin/python3.10"
 use_python(pythondirectory)
 py_config()
 py_run_string("import sys")
-#install_github("AlexandrovLab/SigProfilerExtractorR")
-#SigProfilerExtractorR::install("GRCh38", rsync=FALSE, bash=TRUE)
-#inputdata <- "/home/marta/TESIS/OGM+WES/mutationalsignaturesOGM/results/Patient-4/SigProfiler/results/MatrixGenerator/Patient-4.SV32.matrix.tsv"
-#output <- "/home/marta/TESIS/OGM+WES/mutationalsignaturesOGM/results/Patient-4/SigProfiler/results/Extractor/"
+
 #########################################
-# Función para comprobar si el archivo solo tiene la cabecera
+# Function to check if the file only has the header
 is_empty_or_header_only <- function(file) {
   lines <- readLines(file, warn = FALSE)
-  return(length(lines) == 1)  # Si solo hay una línea (la cabecera), no hay datos
+  return(length(lines) == 1)  # If there is only one line (the header), there are no data
 }
 
-# Comprobar si el archivo de entrada está vacío o solo tiene la cabecera
+# Check if the input file is empty or has only the header
 if (!file.exists(inputdata) || file.info(inputdata)$size == 0 || is_empty_or_header_only(inputdata)) {
-  message("El archivo de entrada está vacío o solo contiene la cabecera. Creando un archivo de salida vacío y saliendo sin error.")
+  message("The input file is empty or contains only the header. Creating an empty output file and exiting without error.")
   
-  # Asegurar que el directorio de salida existe
+  # Ensure that the output directory exists
   if (!dir.exists(output)) {
     dir.create(output, recursive = TRUE)
   }
   
-  # Crear un archivo vacío para que Snakemake no falle
+  # Create an empty file so that Snakemake does not crash
   empty_output_file <- file.path(output, "empty_result.txt")
   file.create(empty_output_file)
   
-  # Salir sin error
+  # Exit without error
   quit(status = 0)
 }
-
 
 
 sigprofilerextractor("matrix", output, inputdata, reference_genome = "GRCh38",opportunity_genome = "GRCh38", minimum_signatures = minimum_signatures, maximum_signatures = maximum_signatures, nmf_replicates =nmf_replicates)
