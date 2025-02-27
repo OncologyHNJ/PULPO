@@ -1,17 +1,20 @@
-#######CREATED BY:MARTA PORTASANY#################
+# ==================================================
+# Script: 9.CNVTOFORMAT.R
+# Description: Descompression of OGM raw data as a first step in the PULPO pipeline
+# Author: Marta Portasany
+# Created on: 2025-02-27
+# Last modified: 2025-02-27
+# Pipeline: PULPO
+# Dependencies: dplyr
+# ==================================================
+
 library(dplyr)
 
-#############SIGPROFILEREXTRACTORCOHORT###########
 args <- commandArgs(trailingOnly = TRUE)
 inputdata <- args[1]
 output <- args[2]
 patient <- args[3]
-##################################################
-#inputdata <- "/home/user/MARTA/PULPO_RevisadoBionano/results/Patients/Patient-2/OGMdata"
-#output <-  "/home/user/MARTA/PULPO_RevisadoBionano/results/Patients/Patient-2/SigProfiler/data/SigProfilerCNVdf.tsv"
-#patient <- "Patient-2"
-##################################################
-#setwd("./Escritorio/PULPOPRUEBA/results/Patients/Patient-1/OGMdata/")
+
 pattern <- "CNV"
 file_path <- list.files(path = inputdata, pattern = pattern, full.names = TRUE)
 #cnv_files <- grep(pattern, inputdata, value = TRUE)
