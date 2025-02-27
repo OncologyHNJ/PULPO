@@ -17,10 +17,6 @@ patient <- args[3]
 
 pattern <- "CNV"
 file_path <- list.files(path = inputdata, pattern = pattern, full.names = TRUE)
-#cnv_files <- grep(pattern, inputdata, value = TRUE)
-#list.files(inputdata)
-#setwd(inputdata)
-#list.files()
 
 # Check if the file has only headers (i.e. no data)
 if (length(file_path) == 0) {
