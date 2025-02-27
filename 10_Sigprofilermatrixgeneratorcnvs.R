@@ -1,4 +1,13 @@
 #######CREATED BY:MARTA PORTASANY#################
+# ==================================================
+# Script: 10_Sigprofilermatrixgeneratorcnvs
+# Description: Execution of SigProfilerMatrixgenerator for single samples of CNV files
+# Author: Marta Portasany
+# Created on: 2025-02-27
+# Last modified: 2025-02-27
+# Pipeline: PULPO
+# Dependencies: reticulate, devtools, SigProfilerMatrixGeneratorR
+# ==================================================
 #############SIGPROFILERMATRIXGENERATOR###########
 args <- commandArgs(trailingOnly = TRUE)
 inputdata <- args[1]
@@ -6,26 +15,12 @@ pythondirectory <- args[2]
 output <- args[3]
 patient <- args[4]
 sigprofilerfile <- args[5]
-#log_file <- args[6]
 ##################################################
 library("reticulate")
 library("devtools")
-##################################################
-#inputdata <-"/home/user/MARTA/PULPO_ejecutadoprueba/results/Patients/Patient-71/SigProfiler/data/SigProfilerCNVdf.tsv"
-#inputdata <-"/home/user/MARTA/PULPO_RevisadoBionano/results/Patients/Patient-4/SigProfiler/data/SigProfilerCNVdf.tsv"
-#output <- "/home/user/MARTA/PULPO_RevisadoBionano/results/Patients/Patient-4/SigProfiler/results/CNVs/"
-#sigprofilerfile <-  "/home/user/MARTA/PULPO_RevisadoBionano/results/Patients/Patient-2/SigProfiler/results/CNVs/MatrixGenerator/Patient-4.CNV48.matrix.tsv"
-#patient<- "Patient-4"
-#pythondirectory <- "/home/user/miniconda3/envs/PULPO/bin/python3.10"
-#log_file <- "/home/user/MARTA/PULPO_RevisadoBionano/logs/Patients/Patient-4/SigProfiler/Sigprofiler/sigprofilercnvmatrixgenerator.log"
-##################################################
 use_python(pythondirectory)
 py_config()
 py_run_string("import sys")
-
-#directorylog <- dirname(log_file)
-#dir.create(directorylog,recursive = TRUE)
-#file.create(log_file)
 ##################################################
 tryCatch(
   {
@@ -41,11 +36,6 @@ tryCatch(
     library(SigProfilerMatrixGeneratorR)  # Attempt to reload again after installation
   }
 )
-
-
-
-#############
-#############
 
 tryCatch({
   # Read the file
@@ -71,9 +61,9 @@ tryCatch({
       CNVMatrixGenerator(file_type = "PCAWG", input_file = inputdata, project = patient, output_path = output)
     }, error = function(e) {
       if (grepl("objeto 'sys' no encontrado", e$message)) {
-        message("Advertencia: Se ignoró el error relacionado con 'sys' no encontrado.")
+        message("Warning: Error related to ‘sys’ not found was ignored.")
       } else {
-        stop(e)  # Relanza otros errores
+        stop(e)  # Relates other errors
       }
     })
   }
