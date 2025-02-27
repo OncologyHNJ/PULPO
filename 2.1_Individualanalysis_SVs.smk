@@ -1,7 +1,6 @@
 rule sigprofilermatrixgenerator:
     input:
         data2 = f"{resultsdir}/Patients/{{anonymised}}/SigProfiler/data/SigProfilerSVdf.bedpe"
-
     output:
         output = directory(f"{resultsdir}/Patients/{{anonymised}}/SigProfiler/results/SVs/MatrixGenerator/"),
         data= f"{resultsdir}/Patients/{{anonymised}}/SigProfiler/results/SVs/MatrixGenerator/{{anonymised}}.SV32.matrix.tsv",
