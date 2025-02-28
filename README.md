@@ -1,78 +1,80 @@
 # PULPO
 
-PULPO es un pipeline basado en Snakemake para el análisis de variantes estructurales (SVs) y copy number variations (CNVs) en datos de Optical Genome Mapping (OGM).
+PULPO is a Snakemake-based pipeline for analyzing structural variants (SVs) and copy number variations (CNVs) in Optical Genome Mapping (OGM) data.
 
-## Instalación
+## Installation
 
-Para ejecutar PULPO, sigue los siguientes pasos:
+To run PULPO, follow these steps:
 
-1. **Clona el repositorio:**
+1. **Clone the repository:**
    ```bash
-   git clone https://github.com/tuusuario/PULPO.git
+   git clone https://github.com/youruser/PULPO.git
    cd PULPO
    ```
 
-2. **Instala Conda y Snakemake:**
-   Si aún no tienes Conda instalado, puedes descargar Miniconda desde [aquí](https://docs.conda.io/en/latest/miniconda.html).
-   Luego, instala Snakemake:
+2. **Install Conda and Snakemake:**
+   If you don’t have Conda installed, you can download Miniconda from [here](https://docs.conda.io/en/latest/miniconda.html).  
+   Then, install Snakemake:
    ```bash
    conda install -c conda-forge -c bioconda snakemake
    ```
 
-3. **Crea y activa un entorno Conda con las dependencias necesarias:**
+3. **Create and activate a Conda environment with the required dependencies:**
    ```bash
    conda env create -f environment.yaml
    conda activate pulpo_env
    ```
 
-## Uso
+## Usage
 
-Para ejecutar el pipeline en modo estándar:
+To run the pipeline in standard mode:
 ```bash
 snakemake --cores <n>
 ```
-Donde `<n>` es el número de hilos que quieres usar.
+Where `<n>` is the number of threads you want to use.
 
-Si deseas ejecutar PULPO en un clúster:
+If you want to run PULPO on a cluster:
 ```bash
 snakemake --profile cluster
 ```
 
-### Ejecución por etapas
-Puedes ejecutar etapas específicas de la pipeline con:
+### Running specific steps
+You can execute specific pipeline steps with:
 ```bash
-snakemake <regla> --cores <n>
+snakemake <rule> --cores <n>
 ```
-Por ejemplo, para ejecutar solo el preprocesamiento de SVs:
+For example, to run only SV preprocessing:
 ```bash
 snakemake 1.1_Preprocessing_SVs --cores 4
 ```
 
-### Reglas principales
-PULPO está estructurado en varias etapas:
+### Main rules
+PULPO is structured into several stages:
 
-1. **Preprocesamiento de datos:**
+1. **Data preprocessing:**
    - `1.1_Preprocessing_SVs`
    - `1.2_Preprocessing_CNVs`
-2. **Análisis individual de muestras:**
+2. **Individual sample analysis:**
    - `2.1_Individualanalysis_SVs`
    - `2.2_Individualanalysis_CNVs`
-3. **Análisis de cohortes:**
+3. **Cohort analysis:**
    - `3.1_Cohortanalysis_SVs`
    - `3.2_Cohortanalysis_CNVs`
 
-### Manejo de errores y depuración
-Para ver los logs detallados de una ejecución:
+### Error handling and debugging
+To view detailed logs of an execution:
 ```bash
 snakemake --cores <n> --printshellcmds --keep-going --rerun-incomplete
 ```
-## Estructura del repositorio
 
-- `Snakefile` - Archivo principal del pipeline.
-- `rules/` - Reglas de Snakemake organizadas por etapas del análisis.
-- `scripts/` - Scripts adicionales para procesamiento de datos.
-- `config/` - Archivos de configuración.
+## Repository structure
 
-## Contacto
-Si tienes dudas o problemas, abre un issue en GitHub o contacta a los desarrolladores.
+- `Snakefile` - Main pipeline file.
+- `rules/` - Snakemake rules organized by analysis stages.
+- `scripts/` - Additional scripts for data processing.
+- `config/` - Configuration files.
+
+## Contact
+
+If you have any questions or issues, open an issue on GitHub or contact the developers.
 
