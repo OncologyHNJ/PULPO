@@ -26,7 +26,7 @@ if (!requireNamespace("SigProfilerExtractorR") == TRUE){
   library("SigProfilerExtractorR")
   SigProfilerExtractorR::install("GRCh38", rsync=FALSE, bash=TRUE)
   
-}else {
+} else {
   message("SigProfilerExtractorR is already installed")
   library("SigProfilerExtractorR")
 }
