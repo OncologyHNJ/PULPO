@@ -38,6 +38,34 @@ Si deseas ejecutar PULPO en un clúster:
 snakemake --profile cluster
 ```
 
+### Ejecución por etapas
+Puedes ejecutar etapas específicas de la pipeline con:
+```bash
+snakemake <regla> --cores <n>
+```
+Por ejemplo, para ejecutar solo el preprocesamiento de SVs:
+```bash
+snakemake 1.1_Preprocessing_SVs --cores 4
+```
+
+### Reglas principales
+PULPO está estructurado en varias etapas:
+
+1. **Preprocesamiento de datos:**
+   - `1.1_Preprocessing_SVs`
+   - `1.2_Preprocessing_CNVs`
+2. **Análisis individual de muestras:**
+   - `2.1_Individualanalysis_SVs`
+   - `2.2_Individualanalysis_CNVs`
+3. **Análisis de cohortes:**
+   - `3.1_Cohortanalysis_SVs`
+   - `3.2_Cohortanalysis_CNVs`
+
+### Manejo de errores y depuración
+Para ver los logs detallados de una ejecución:
+```bash
+snakemake --cores <n> --printshellcmds --keep-going --rerun-incomplete
+```
 ## Estructura del repositorio
 
 - `Snakefile` - Archivo principal del pipeline.
