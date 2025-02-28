@@ -1,13 +1,16 @@
-#######CREATED BY:MARTA PORTASANY########
-#############MERGEDCOHORT#################
-#########################################
+# ==================================================
+# Script: 12_Mergecohortcnvs.R
+# Description: Merge individual matrix samples in one single cohort matrix file  
+# Author: Marta Portasany
+# Created on: 2025-02-27
+# Last modified: 2025-02-27
+# Pipeline: PULPO
+# Dependencies: Base R (no external packages required)
+# ==================================================
 args <- commandArgs(trailingOnly = TRUE)
 directorypatients <- args[1]
 outputcohort <- args[2]
-#########################################
-directorypatients <- "/home/user/MARTA/PULPO_RevisadoBionano/results/Patients/"
-outputcohort <- "/home/user/MARTA/PULPO_ejecutadoprueba/results/Cohort/CNVs/Cohort.CNV48.matrix.tsv"
-#########################################
+
 # List all files in the patients directory
 patients <- list.files(directorypatients)
 directories <- list()
@@ -32,8 +35,6 @@ for (j in directories) {
   }
 }
 
-
-
 # Convert the list of files into a single data frame
 cohortfile <- files[[1]][1]  # Start with the first file
 
@@ -41,7 +42,6 @@ for (k in 1:length(files)) {
   if (nrow(files[[k]]) > 0 && ncol(files[[k]]) > 1) {  # Check if file is not empty and has more than one column
     # Get the column names from the current file
     col_names <- colnames(files[[k]])
-    
     # Exclude the first column (MutationType) but keep the second column
     cohortfile <- cbind(cohortfile, files[[k]][2])
   } 
@@ -49,10 +49,6 @@ for (k in 1:length(files)) {
     message(paste("Some file is either empty or has only one column. Skipping."))
   }
 }
-
-#dim(cohortfile)
-#dir.create(outputcohort)
-#dir.create(dirname(outputcohort), recursive = TRUE, showWarnings = FALSE)
 
 write.table(cohortfile, file = outputcohort, sep = "\t", row.names = FALSE, quote = FALSE)
 
