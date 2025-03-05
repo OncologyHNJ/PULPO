@@ -31,30 +31,47 @@ The pipeline uses 2 config files from the folder /config/ :
    - PULPO.yml: Config file to create the conda env where the pipeline will be executed.
    - configpulpo.yaml: This is the main configuration file of the pipeline. You can select here your type of analysis or the combination of it.
 
-   ## configpulpo.yaml
-This configuration file (configpulpo.yaml) defines key settings for running the PULPO pipeline, including input files, directories, analysis type, and software versions.
+## Configuration
 
-1. **Input Files and Directories**
- - input.bionanodata: Specifies the directory containing raw OGM (Optical Genome Mapping) folders.
- - input.samples: Defines the path to a TSV file listing sample names and their corresponding anonymized names.
-2. **Directory Paths**
- - directories.workdirectory: The working directory where all pipeline outputs (results, logs, intermediate files) will be created.
-- directories.pythonenvdir: The path to the Python 3.10 executable within the Conda environment used by PULPO. If the pipeline setup was done correctly, this path should not need modification. In case of issues, manually specify the correct Python 3.10 path.
-- directories.scriptsdir: The directory where the pipeline scripts are located. After cloning the repository, scripts will be found under /path/to/repository/PULPO/scripts.
-3. **Analysis Configuration**
-- analysis.analysis_type: Defines the type of analysis to be performed. Options include:
- - "SVs": Structural Variants analysis
- - "CNVs": Copy Number Variants analysis
- - "SVs_and_CNVs": Both SVs and CNVs analysis
-- analysis.run_cohort_analysis:
- - TRUE: Runs a cohort analysis (multiple samples together).
- - FALSE: Performs individual sample analysis only.
-4. **File Type Specification**
- - file_types.CNVs: Format of the CNV input files. Options: "bed", "txt", or "csv".
- - file_types.SVs: Format of the SV input files. Options: "bedpe" or "smap".
-5. **BionanoAccess Software Version**
-- BionanoAccess.version: Specifies the BionanoAccess software version. Supported versions: "1.6.1" or "1.8.1".
+The pipeline uses two configuration files located in the `/config/` folder:
 
+- **`PULPO.yml`**: Configuration file for creating the Conda environment where the pipeline will be executed.  
+- **`configpulpo.yaml`**: The main configuration file of the pipeline. Here, you can select the type of analysis or a combination of them.
+
+---
+
+## `configpulpo.yaml`
+
+This configuration file defines key settings for running the PULPO pipeline, including input files, directories, analysis types, and software versions.
+
+### 1. Input Files and Directories
+- **`input.bionanodata`**: Directory containing raw Optical Genome Mapping (OGM) data folders.  
+- **`input.samples`**: Path to a TSV file listing sample names and their corresponding anonymized names.  
+
+### 2. Directory Paths
+- **`directories.workdirectory`**: Working directory where all pipeline outputs (results, logs, intermediate files) will be stored.  
+- **`directories.pythonenvdir`**: Path to the Python 3.10 executable within the Conda environment used by PULPO.  
+  - If the pipeline setup was done correctly, this path should not require modification.  
+  - In case of issues, manually specify the correct Python 3.10 path.  
+- **`directories.scriptsdir`**: Directory where the pipeline scripts are located.  
+  - After cloning the repository, scripts will be found under `/path/to/repository/PULPO/scripts`.  
+
+### 3. Analysis Configuration
+- **`analysis.analysis_type`**: Defines the type of analysis to be performed. Options include:  
+  - `"SVs"` → Structural Variants analysis  
+  - `"CNVs"` → Copy Number Variants analysis  
+  - `"SVs_and_CNVs"` → Both SVs and CNVs analysis  
+- **`analysis.run_cohort_analysis`**:  
+  - `TRUE` → Runs a cohort analysis (multiple samples together).  
+  - `FALSE` → Performs individual sample analysis only.  
+
+### 4. File Type Specification
+- **`file_types.CNVs`**: Format of the CNV input files. Options: `"bed"`, `"txt"`, or `"csv"`.  
+- **`file_types.SVs`**: Format of the SV input files. Options: `"bedpe"` or `"smap"`.  
+
+### 5. BionanoAccess Software Version
+- **`BionanoAccess.version`**: Specifies the BionanoAccess software version.  
+  - Supported versions: `"1.6.1"` or `"1.8.1"`.  
 
 ## Usage
 
