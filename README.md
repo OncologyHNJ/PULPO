@@ -31,7 +31,7 @@ The pipeline uses 2 config files from the folder /config/ :
    - PULPO.yml: Config file to create the conda env where the pipeline will be executed.
    - configpulpo.yaml: This is the main configuration file of the pipeline. You can select here your type of analysis or the combination of it.
 
-   # configpulpo.yaml
+   ## configpulpo.yaml
 This configuration file (configpulpo.yaml) defines key settings for running the PULPO pipeline, including input files, directories, analysis type, and software versions.
 
 1. **Input Files and Directories**
