@@ -4,7 +4,7 @@
 <br><br><br>
 
 
-# PULPO
+# PULPO (Pipeline of understanding large-scale patterns of oncogenomic signatures)
 
 PULPO is a Snakemake-based pipeline for analyzing structural variants (SVs) and copy number variations (CNVs) in Optical Genome Mapping (OGM) data.
 
