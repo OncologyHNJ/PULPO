@@ -5,7 +5,10 @@
 
 
 # PULPO: Pipeline of understanding large-scale patterns of oncogenomic signatures
-###### Implemented by Marta Portasany-Rodríguez
+###### Implemented by: 
+***Marta Portasany-Rodríguez***
+*Gonzalo Soria-Alcaide*
+*Jorge García-Martínez*
 
 ## Introduction
 
