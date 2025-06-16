@@ -50,7 +50,7 @@ PULPO v.1.0 is a novel, fully automated Snakemake-based pipeline for analyzing s
 9. [📄 License](#license)  
 10. [🧾 Citation](#citation)
 
-## Quick Start
+## Quick Start 🚀
 
 ```bash
 git clone https://github.com/OncologyHNJ/PULPO.git
@@ -59,7 +59,7 @@ conda env create -f config/PULPO.yml
 conda activate PULPO
 snakemake --cores 4
 ```
-## Installation
+## Installation 🛠️
 
 To run PULPO, follow these steps:
 
@@ -83,7 +83,7 @@ To run PULPO, follow these steps:
    conda activate PULPO
    ```
 
-## Configuration
+## Configuration ⚙️
 
 The pipeline uses two configuration files located in the `/config/` folder:
 
@@ -174,14 +174,14 @@ snakemake --cores <n> --printshellcmds --keep-going --rerun-incomplete
 - `scripts/` - Additional scripts for data processing.
 - `config/` - Configuration files.
   
-## External Tools and References
+## External Tools and References 🔗
 
 - [Snakemake Documentation](https://snakemake.readthedocs.io/)
 - [Bionano Genomics](https://bionanogenomics.com/)
 - [SigProfilerMatrixGenerator](https://github.com/AlexandrovLab/SigProfilerMatrixGenerator)
 
 
-## Contact
+## Contact 
 
 If you have any questions, issues or bug reports open an issue on GitHub or contact us in bioinformaticafibhunj@gmail.com.
 
