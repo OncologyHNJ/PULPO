@@ -15,34 +15,11 @@
   <img src="https://img.shields.io/badge/Conda-environment-green" alt="Conda"/>
 </p>
 
----
-
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<img src="./PULPOlogo.png" width="220" align="right">
-<br><br><br>
-<br><br><br>
-<br><br><br>
-
 ### Implemented by:
 
 - **Marta Portasany-Rodríguez**  
 - *Gonzalo Soria-Alcaide*  
 - *Jorge García-Martínez*
-
-# PULPO: Pipeline of understanding large-scale patterns of oncogenomic signatures
-
-![License](https://img.shields.io/badge/license-MIT-green)
-![Snakemake](https://img.shields.io/badge/Snakemake-v1.0-blue)
-![Conda](https://img.shields.io/badge/Conda-environment-green)
-
-###### Implemented by: 
-***Marta Portasany-Rodríguez***
-
-*Gonzalo Soria-Alcaide*
-
-*Jorge García-Martínez*
 
 ## Introduction
 <img src="./.figs/GraphicalAbstractPULPO (3).png" align="right" width="500"/>
