@@ -15,11 +15,13 @@
   <img src="https://img.shields.io/badge/Conda-environment-green" alt="Conda"/>
 </p>
 
-## Implemented by:
+###### Implemented by: 
+***Marta Portasany-Rodríguez***
 
-- **Marta Portasany-Rodríguez**  
-- *Gonzalo Soria-Alcaide*  
-- *Jorge García-Martínez*
+*Gonzalo Soria-Alcaide*
+
+*Jorge García-Martínez*
+
 
 ## Introduction
 <img src="./.figs/GraphicalAbstractPULPO (3).png" align="right" width="500"/>
