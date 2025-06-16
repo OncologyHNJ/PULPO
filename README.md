@@ -149,6 +149,13 @@ snakemake --cores <n> --printshellcmds --keep-going --rerun-incomplete
 - `rules/` - Snakemake rules organized by analysis stages.
 - `scripts/` - Additional scripts for data processing.
 - `config/` - Configuration files.
+  
+## External Tools and References
+
+- [Snakemake Documentation](https://snakemake.readthedocs.io/)
+- [Bionano Genomics](https://bionanogenomics.com/)
+- [SigProfilerMatrixGenerator](https://github.com/AlexandrovLab/SigProfilerMatrixGenerator)
+
 
 ## Contact
 
@@ -163,4 +170,14 @@ We have dedicated categories for:
 - 💡 [Feature Requests](https://github.com/OncologyHNJ/PULPO/discussions/categories/feature-requests)
 - 🧪 [Help with Installation](https://github.com/OncologyHNJ/PULPO/discussions/categories/help-with-installation)
 - 🐛 [Bug troubleshooting](https://github.com/OncologyHNJ/PULPO/discussions/categories/bug-troubleshooting)
+
+- ## License
+
+This project is licensed under the MIT License.
+
+## Citation
+
+If you use PULPO in your research, please cite:
+
+
 
