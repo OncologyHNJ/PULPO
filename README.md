@@ -5,11 +5,11 @@
 
 
 # PULPO: Pipeline of understanding large-scale patterns of oncogenomic signatures
-```markdown
+
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Snakemake](https://img.shields.io/badge/Snakemake-v1.0-blue)
 ![Conda](https://img.shields.io/badge/Conda-environment-green)
-```
+
 ###### Implemented by: 
 ***Marta Portasany-Rodríguez***
 
