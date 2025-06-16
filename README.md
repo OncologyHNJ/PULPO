@@ -15,7 +15,7 @@
   <img src="https://img.shields.io/badge/Conda-environment-green" alt="Conda"/>
 </p>
 
-### Implemented by:
+## Implemented by:
 
 - **Marta Portasany-Rodríguez**  
 - *Gonzalo Soria-Alcaide*  
