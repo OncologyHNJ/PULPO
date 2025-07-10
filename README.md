@@ -13,7 +13,12 @@
   <img src="https://img.shields.io/badge/license-MIT-green" alt="License: MIT"/>
   <img src="https://img.shields.io/badge/Snakemake-v1.0-blue" alt="Snakemake Version"/>
   <img src="https://img.shields.io/badge/Conda-environment-green" alt="Conda"/>
+  <a href="https://doi.org/10.1101/2025.07.02.661487">
+    <img src="https://img.shields.io/badge/DOI-10.1101%2F2025.07.02.661487-blue.svg" alt="DOI">
+  </a>
 </p>
+
+
 
 ###### Implemented by: 
 ***Marta Portasany-Rodríguez***
@@ -208,5 +213,7 @@ This project is licensed under the MIT License.
 
 If you use PULPO in your research, please cite:
 
-
+PULPO: Pipeline of understanding large-scale patterns of oncogenomic signatures
+Marta Portasany-Rodríguez, Gonzalo Soria-Alcaide, Elena G. Sánchez, María Ivanova, Ana Gómez, Reyes Jiménez, Jaanam Lalchandani, Gonzalo García-Aguilera, Silvia Alemán-Arteaga, Cristina Saiz-Ladera, Manuel Ramírez-Orellana, Jorge Garcia-Martinez
+bioRxiv 2025.07.02.661487; doi: https://doi.org/10.1101/2025.07.02.661487
 
