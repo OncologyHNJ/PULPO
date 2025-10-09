@@ -10,14 +10,20 @@
 
 <!-- Badges aligned to the right -->
 <p align="right">
-  <img src="https://img.shields.io/badge/license-MIT-green" alt="License: MIT"/>
-  <img src="https://img.shields.io/badge/Snakemake-v7.32.4-blue" alt="Snakemake Version"/>
-  <img src="https://img.shields.io/badge/Conda-environment-green" alt="Conda"/>
+  <a href="LICENSE">
+    <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-green">
+  </a>
+  <img alt="Snakemake v7.32.4" src="https://img.shields.io/badge/Snakemake-v7.32.4-blue">
+  <img alt="Conda environment" src="https://img.shields.io/badge/Conda-environment-green">
   <a href="https://doi.org/10.1101/2025.07.02.661487">
-    <img src="https://img.shields.io/badge/DOI-10.1101%2F2025.07.02.661487-blue.svg" alt="DOI">
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17306078.svg)](https://doi.org/10.5281/zenodo.17306078)
+    <img alt="bioRxiv preprint DOI: 10.1101/2025.07.02.661487"
+         src="https://img.shields.io/badge/preprint-bioRxiv-blue">
+  </a>
+  <a href="https://doi.org/10.5281/zenodo.17306078">
+    <img alt="Zenodo DOI: 10.5281/zenodo.17306078"
+         src="https://zenodo.org/badge/DOI/10.5281/zenodo.17306078.svg">
+  </a>
 </p>
-
 ###### Implemented by: 
 ***Marta Portasany-Rodríguez***
 
