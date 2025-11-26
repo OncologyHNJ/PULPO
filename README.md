@@ -1,3 +1,7 @@
+> ⚠️ **DEPRECATED REPOSITORY**  
+> This repository is no longer maintained.  
+> Please use the actively developed version instead:  
+> 👉 [PULPO-v.2.0.0](https://github.com/OncologyHNJ/PULPO-v.2.0.0)
 
 <!-- Logo aligned to the right -->
 <p align="right">
